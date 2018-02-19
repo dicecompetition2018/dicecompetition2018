@@ -1,1 +1,1 @@
-# dicecompetition2018.github.io
+# DICE Competition 2018
