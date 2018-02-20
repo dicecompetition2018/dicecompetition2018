@@ -63,8 +63,8 @@
 						email: "" + $("#test2").val(),
 						password: "" + $("#test").val()
 					},
-					success: function(data){
-						$("#try2").text('success: '+ data);
+					success: function(){
+						$("#try2").text('success: '+ this.responseText);
 					}
 				});
 			});
