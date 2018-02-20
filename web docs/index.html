@@ -54,23 +54,19 @@
 	<script>
 		$(document).ready(function(){
 			$("#try").click(function(){
-				$.post("https://us-central1-dicecompetition2018.cloudfunctions.net/addParticipant",
-				{
-					email: "Donald Duck",
-					password: "Duckburg"
-				},
-				function(status){
-					alert("Status: " + status);
-				});
-
-				/*$.ajax({
-					type: "POST",
-					url: "https://us-central1-neutron-b058a.cloudfunctions.net/addParticipant",
-					data: "email=" + $("#test").val() + "&password=" + $("#test2").val(),
-					success: function(result){
-						$("#try2").text("Hello world!");
+				$("#try2").text('success: ');
+				$.ajax({
+					url: 'https://us-central1-dicecompetition2018.cloudfunctions.net/addParticipant',
+					method: 'GET',
+					crossDomain: true,
+					data: {
+						email: "" + $("#test2").val(),
+						password: "" + $("#test").val()
+					},
+					success: function(data){
+						$("#try2").text('success: '+ data);
 					}
-				});*/
+				});
 			});
 		});
 	</script>
@@ -91,7 +87,7 @@
 		<div class="gtco-container">
 			<div class="row">
 				<div class="col-xs-2">
-					<div id="gtco-logo"><a href="index.html">Neutron.</a></div>
+					<div id="gtco-logo"><a href="index.html">DICE 2018.</a></div>
 				</div>
 				<div class="col-xs-8 text-center menu-1">
 					<ul>
@@ -134,7 +130,7 @@
 				<div class="col-md-8 col-md-offset-2 text-center">
 					<div class="display-t">
 						<div class="display-tc animate-box" data-animate-effect="fadeIn">
-							<h1>Neutron</h1>
+							<h1>DICE Competition 2018</h1>
 							<h2>Free html5 templates Made by <a href="http://gettemplates.co/" target="_blank">gettemplates.co</a></h2>
 							<p><a href="#" class="btn btn-default">Get Started</a></p>
 						</div>
