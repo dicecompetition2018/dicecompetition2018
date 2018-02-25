@@ -16,7 +16,12 @@ exports.addParticipant = functions.https.onRequest((req, res) => {
   const password = req.query.password;
 
   admin.database().ref('/participant').push({email: email, password: password}).then((snapshot) => {
-    return snapshot;
+    var response = {
+      title  : 'Hi, ' + email,
+      success : 'Registered Successfully'
+    }
+  
+    res.end(JSON.stringify(response));
   });
 });
 
